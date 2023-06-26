@@ -4,8 +4,9 @@ import keras
 import numpy as np
 import matplotlib.pyplot as plt
 from tensorflow.python.keras import layers
+import os
 
-dfmain = pd.read_excel("DDWCT-0000B-01.xls", header=6)
+dfmain = pd.read_excel(os.getcwd() + "\\MLdrivenDataAnalysisCensus2011\\DDWCT-0000B-01.xls", header=6)
 df = dfmain.pivot_table(index = [5], columns = [7], values = [x for x in range(8, 23 + 1)])
 
 df = df.drop(columns=[( 23,          '10-14'),
